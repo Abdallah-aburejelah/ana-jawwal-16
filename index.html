@@ -4,4 +4,24 @@
 <section id="register" class="hide"><div class="box"><h1 style="text-align:center">انضم إلى ANA JAWWAL</h1><p style="text-align:center">الموسم السادس عشر</p><form id="form"><label>الاسم الرباعي *</label><input required minlength="8" placeholder="الاسم الرباعي"><label>رقم الجوال *</label><input required type="tel" placeholder="05XXXXXXXX"><label>رقم الهوية *</label><input required inputmode="numeric" pattern="[0-9]{9}" placeholder="9 أرقام"><label>الجامعة *</label><select required><option value="">اختر الجامعة</option><option>جامعة بيرزيت</option><option>جامعة النجاح الوطنية</option><option>جامعة القدس</option><option>جامعة الخليل</option><option>جامعة بوليتكنك فلسطين</option><option>الجامعة العربية الأمريكية</option><option>جامعة بيت لحم</option><option>جامعة فلسطين الأهلية</option><option>جامعة فلسطين التقنية - خضوري</option><option>جامعة القدس المفتوحة</option><option>الكلية العصرية الجامعية</option><option>جامعة أخرى</option></select><label>الصورة الشخصية *</label><input required type="file" accept="image/*"><button class="primary">إرسال طلب التسجيل</button></form><p class="note">هذه معاينة تجريبية فقط؛ لا يتم حفظ أو إرسال أي بيانات.</p></div><button class="back" onclick="show('home')">رجوع</button></section>
 <section id="login" class="hide"><div class="box"><h1>تسجيل الدخول</h1><label>رقم الجوال</label><input type="tel"><label>كلمة المرور</label><input type="password"><button class="primary" onclick="alert('الدخول يحتاج ربطاً آمناً بقاعدة بيانات ونظام موافقات')">دخول</button><p class="note">الدخول غير مفعّل في المعاينة.</p></div><button class="back" onclick="show('home')">رجوع</button></section>
 <section id="done" class="hide"><div class="box" style="text-align:center"><h1>🎉 أهلاً في عائلة ANA JAWWAL!</h1><p>انضمامك أسعدنا 💚</p><p>تم استلام طلبك بنجاح، وهو بانتظار موافقة فريق أنا جوال.</p><p>متحمسين نشوف بصمتك معنا! 🚀</p><div class="status">⏳ حالة الطلب: بانتظار الموافقة</div><p class="note">رسالة تجريبية، لم يُرسل طلب حقيقي.</p></div><button class="back" onclick="show('home')">الرئيسية</button></section></div>
-<script>function show(id){for(const s of ['home','register','login','done'])document.getElementById(s).classList.toggle('hide',s!==id)}document.getElementById('form').onsubmit=e=>{e.preventDefault();show('done')}</script></html>
+<script>function show(id){for(const s of ['home','register','login','done'])document.getElementById(s).classList.toggle('hide',s!==id)}document.getElementById('form').onsubmit=e=>{e.preventDefault();show('done')}</script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCmQWidQXaAm7CbdBUy4heOVREfD0p1oNU",
+  authDomain: "anajawwal.firebaseapp.com",
+  projectId: "anajawwal",
+  storageBucket: "anajawwal.firebasestorage.app",
+  messagingSenderId: "226105383417",
+  appId: "1:226105383417:web:9d13f7a2c4b5b4a1744528",
+  measurementId: "G-ZQXEW378W1"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+</script>
+</html>
